@@ -9,7 +9,7 @@ const timelineData = [
   {
     year: "2020-2023",
     title: "MA Sabilurrosyad",
-    description: "Finished high school with honors and prepared for the next journey",
+    description: "Finished high school and prepared for the next journey",
     img: "/images/sabilurrosyad.jpg",
     href: 'https://www.instagram.com/masosissbr/'
   },
