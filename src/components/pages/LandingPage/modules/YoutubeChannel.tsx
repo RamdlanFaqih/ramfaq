@@ -8,13 +8,13 @@ const YoutubeChannel = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Title */}
                 <div className="mb-6">
-                    <h2 className="text-4xl font-bold bg-amber-200 inline-block px-4 py-1">
+                    <h2 className="text-xl md:text-4xl font-bold bg-amber-200 inline-block px-2 md:px-4 py-1">
                         Youtube Channel
                     </h2>
                 </div>
 
                 {/* Description */}
-                <p className="text-lg md:text-xl text-gray-700 mb-5 max-w-3xl">
+                <p className="text-sm md:text-xl text-gray-700 mb-5 max-w-3xl">
                     I&apos;m kicking off my own YouTube channel — a chill space where I share live streams, VODs, and whatever I feel like recording.
                     Sometimes I game, sometimes I code, and sometimes I just vibe. Come hang out!
                 </p>

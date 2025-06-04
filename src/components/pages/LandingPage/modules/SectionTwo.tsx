@@ -65,7 +65,7 @@ const SectionTwo = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h2 className="text-4xl font-bold bg-amber-200 inline-block px-4 py-1">
+          <h2 className="text-xl md:text-4xl font-bold bg-amber-200 inline-block px-4 py-1">
             Projects
           </h2>
         </div>
