@@ -9,30 +9,30 @@ const projects = [
     image: '/images/visi8.png',
     associatedWith: 'Rogatekno',
   },
-  {
-    title: 'Company Profile',
-    description: 'Next JS, Motion',
-    image: '/images/company_profile.png',
-    associatedWith: 'Orbit Tech',
-  },
-  {
-    title: 'Karpous Mobile App',
-    description: 'React Native, Zustand, Tanstack Query',
-    image: '/images/karpous_playstore.jpg',
-    associatedWith: 'Orbit Tech',
-  },
-  {
-    title: 'Fairway Golf',
-    description: 'Next JS, Google 3D Maps Photorealistic API',
-    image: '/images/fairway.png',
-    associatedWith: 'Orbit Tech',
-  },
-  {
-    title: 'Asset Owner Dashboard',
-    description: 'Next JS, Zustand, Tanstack Query, Recharts',
-    image: '/images/asset_owner.png',
-    associatedWith: 'Orbit Tech',
-  },
+  // {
+  //   title: 'Company Profile',
+  //   description: 'Next JS, Motion',
+  //   image: '/images/company_profile.png',
+  //   associatedWith: 'Orbit Tech',
+  // },
+  // {
+  //   title: 'Karpous Mobile App',
+  //   description: 'React Native, Zustand, Tanstack Query',
+  //   image: '/images/karpous_playstore.jpg',
+  //   associatedWith: 'Orbit Tech',
+  // },
+  // {
+  //   title: 'Fairway Golf',
+  //   description: 'Next JS, Google 3D Maps Photorealistic API',
+  //   image: '/images/fairway.png',
+  //   associatedWith: 'Orbit Tech',
+  // },
+  // {
+  //   title: 'Asset Owner Dashboard',
+  //   description: 'Next JS, Zustand, Tanstack Query, Recharts',
+  //   image: '/images/asset_owner.png',
+  //   associatedWith: 'Orbit Tech',
+  // },
   {
     title: 'Mama Recipe',
     description: 'React, Redux, Axios',
@@ -61,11 +61,11 @@ const projects = [
 
 const SectionTwo = () => {
   return (
-    <section className="min-h-screen py-20 px-6 md:px-12 bg-white">
+    <section className="min-h-screen py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h2 className="text-xl md:text-4xl font-bold bg-amber-200 inline-block px-4 py-1">
+          <h2 className="text-xl md:text-4xl font-bold bg-secondary inline-block px-4 py-1">
             Projects
           </h2>
         </div>
@@ -75,7 +75,7 @@ const SectionTwo = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="border-b-4 border-black bg-[#F3F3F3] pt-0 hover:shadow-md transition"
+              className="border-b-4 border-black pt-0 hover:shadow-md transition"
             >
               <CardContent className="p-0">
                 <div className="flex flex-col">
@@ -95,7 +95,7 @@ const SectionTwo = () => {
                     </p>
                     <p className="text-sm text-muted-foreground">
                       associated with{' '}
-                      <span className="text-black font-medium">
+                      <span className="font-medium">
                         {project.associatedWith}
                       </span>
                     </p>
