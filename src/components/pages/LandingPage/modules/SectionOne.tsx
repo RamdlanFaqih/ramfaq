@@ -16,7 +16,7 @@ const SectionOne = () => {
       </div>
       {/* Name, Description, Contact */}
       <div className="max-w-2xl flex flex-col items-center gap-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
+        <h1 className="text-4xl md:text-5xl font-bold dark:text-primary leading-tight">
           Ramdlan Faqih
         </h1>
         <div className='flex gap-3 items-center'>

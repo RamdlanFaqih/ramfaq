@@ -43,13 +43,13 @@ const Timeline = () => {
 
       <div>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">My Journey</h2>
+          <h2 className="text-4xl md:text-5xl font-bold dark:text-primary">My Journey</h2>
           <p className="text-lg text-text-primary mt-2">Education & Experience</p>
         </div>
 
       </div>
       <section className="relative max-w-4xl mx-auto py-10 px-4 w-full min-h-screen">
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-1 bg-primary h-full z-0"></div>
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-1 bg-black dark:bg-primary h-full z-0"></div>
         <div className="space-y-20 relative z-10">
           {timelineData.map((item, idx) => {
             const isLeft = idx % 2 === 0;
