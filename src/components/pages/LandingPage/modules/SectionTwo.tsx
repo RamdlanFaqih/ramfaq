@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardContent } from '@/components/ui/card';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
@@ -66,53 +69,131 @@ const projects = [
 ];
 
 const SectionTwo = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 50,
+      scale: 0.9
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut" as const
+      }
+    }
+  }
+
   return (
-    <section className="min-h-screen py-20 px-6 md:px-12">
+    <motion.section 
+      className="min-h-screen py-20 px-6 md:px-12"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-10">
-          <h2 className="text-xl md:text-4xl font-bold bg-secondary inline-block px-4 py-1">
+        <motion.div 
+          className="mb-10"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2 
+            className="text-xl md:text-4xl font-bold bg-secondary inline-block px-4 py-2 neo-card"
+            whileHover={{ 
+              scale: 1.05,
+              rotate: [0, -2, 2, 0],
+              transition: { duration: 0.3 }
+            }}
+          >
             Projects
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {projects.map((project, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="border-b-4 border-black pt-0 hover:shadow-md transition"
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.03,
+                y: -8,
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.98 }}
             >
-              <CardContent className="p-0">
-                <div className="flex flex-col">
-                  <Image
-                    src={project.image}
-                    alt={`Project image ${index}`}
-                    width={600}
-                    height={300}
-                    className="w-full h-[200px] object-cover rounded-t-xl mb-4"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold mb-1">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-2">
-                      {project.description}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      associated with{' '}
-                      <span className="font-medium">
-                        {project.associatedWith}
-                      </span>
-                    </p>
+              <Card className="neo-card overflow-hidden group">
+                <CardContent className="p-0">
+                  <div className="flex flex-col">
+                    <motion.div
+                      className="relative overflow-hidden"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Image
+                        src={project.image}
+                        alt={`Project image ${index}`}
+                        width={600}
+                        height={300}
+                        className="w-full h-[200px] object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <motion.div
+                        className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      />
+                    </motion.div>
+                    <div className="p-4">
+                      <motion.h3 
+                        className="text-lg font-bold mb-1"
+                        whileHover={{ color: "var(--primary)" }}
+                      >
+                        {project.title}
+                      </motion.h3>
+                      <p className="text-sm text-gray-600 mb-2 font-medium">
+                        {project.description}
+                      </p>
+                      <motion.p 
+                        className="text-sm text-muted-foreground"
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        associated with{' '}
+                        <span className="font-bold text-primary">
+                          {project.associatedWith}
+                        </span>
+                      </motion.p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
