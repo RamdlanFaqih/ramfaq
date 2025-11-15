@@ -7,6 +7,12 @@ import React from 'react';
 
 const projects = [
   {
+    title: 'Wanatix | Digital Ticketing',
+    description: 'Next JS, Tailwind CSS, Midtrans',
+    image: '/images/wanatix.png',
+    associatedWith: 'Wanara Digital',
+  },
+  {
     title: 'Visi 8 Webcomic',
     description: 'React Native, Zustand',
     image: '/images/visi8.png',
@@ -145,7 +151,7 @@ const SectionTwo = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <Card className="neo-card overflow-hidden group">
+              <Card className="neo-card overflow-hidden group p-0">
                 <CardContent className="p-0">
                   <div className="flex flex-col">
                     <motion.div
@@ -158,22 +164,21 @@ const SectionTwo = () => {
                         alt={`Project image ${index}`}
                         width={600}
                         height={300}
-                        className="w-full h-[200px] object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="w-full  object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                       <motion.div
-                        className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+                        className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 dark:group-hover:bg-foreground/20 transition-colors duration-300"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                       />
                     </motion.div>
                     <div className="p-4">
                       <motion.h3 
-                        className="text-lg font-bold mb-1"
-                        whileHover={{ color: "var(--primary)" }}
+                        className="text-lg font-bold mb-1 text-foreground group-hover:text-primary transition-colors duration-200"
                       >
                         {project.title}
                       </motion.h3>
-                      <p className="text-sm text-gray-600 mb-2 font-medium">
+                      <p className="text-sm text-muted-foreground mb-2 font-medium">
                         {project.description}
                       </p>
                       <motion.p 
