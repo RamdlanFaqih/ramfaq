@@ -164,7 +164,7 @@ const SectionTwo = () => {
                         alt={`Project image ${index}`}
                         width={600}
                         height={300}
-                        className="w-full  object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="w-full h-[200px]  object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                       <motion.div
                         className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 dark:group-hover:bg-foreground/20 transition-colors duration-300"
