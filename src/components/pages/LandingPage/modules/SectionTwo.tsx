@@ -114,19 +114,15 @@ const SectionTwo = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div 
-          className="mb-10"
+          className="mb-12"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-xl md:text-4xl font-bold bg-secondary inline-block px-4 py-2 neo-card"
-            whileHover={{ 
-              scale: 1.05,
-              rotate: [0, -2, 2, 0],
-              transition: { duration: 0.3 }
-            }}
+            className="text-2xl md:text-4xl font-semibold text-foreground"
+            whileHover={{ scale: 1.01 }}
           >
             Projects
           </motion.h2>
@@ -151,12 +147,12 @@ const SectionTwo = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <Card className="neo-card overflow-hidden group p-0">
+              <Card className="neo-card overflow-hidden group p-0 h-full">
                 <CardContent className="p-0">
-                  <div className="flex flex-col">
+                  <div className="flex flex-col h-full">
                     <motion.div
                       className="relative overflow-hidden"
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                     >
                       <Image
@@ -164,32 +160,24 @@ const SectionTwo = () => {
                         alt={`Project image ${index}`}
                         width={600}
                         height={300}
-                        className="w-full h-[200px]  object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <motion.div
-                        className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 dark:group-hover:bg-foreground/20 transition-colors duration-300"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
+                        className="w-full h-[200px] object-cover transition-transform duration-300"
                       />
                     </motion.div>
-                    <div className="p-4">
+                    <div className="p-5 flex flex-col flex-1">
                       <motion.h3 
-                        className="text-lg font-bold mb-1 text-foreground group-hover:text-primary transition-colors duration-200"
+                        className="text-lg font-semibold mb-2 text-foreground"
                       >
                         {project.title}
                       </motion.h3>
-                      <p className="text-sm text-muted-foreground mb-2 font-medium">
+                      <p className="text-sm text-muted-foreground mb-3">
                         {project.description}
                       </p>
-                      <motion.p 
-                        className="text-sm text-muted-foreground"
-                        whileHover={{ scale: 1.02 }}
-                      >
+                      <p className="text-xs text-muted-foreground mt-auto">
                         associated with{' '}
-                        <span className="font-bold text-primary">
+                        <span className="font-medium text-foreground">
                           {project.associatedWith}
                         </span>
-                      </motion.p>
+                      </p>
                     </div>
                   </div>
                 </CardContent>

@@ -14,15 +14,15 @@ const LandingPage = () => {
         <div className=''>
             <motion.section 
                 id='navbar' 
-                className='flex items-center justify-between py-5 px-6 sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-black dark:border-white'
+                className='flex items-center justify-between py-4 px-6 md:px-12 sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border'
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 <motion.h1 
-                    className='text-primary font-bold text-xl'
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    className='text-foreground font-semibold text-lg md:text-xl tracking-tight'
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                 >
                     Ramdlan Faqih
                 </motion.h1>

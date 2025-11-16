@@ -47,26 +47,21 @@ const YoutubeChannel = () => {
                     viewport={{ once: true }}
                 >
                     <motion.h2 
-                        className="text-xl md:text-4xl font-bold bg-secondary inline-block px-2 md:px-4 py-2 neo-card"
+                        className="text-2xl md:text-4xl font-semibold text-foreground"
                         variants={itemVariants}
-                        whileHover={{ 
-                            scale: 1.05,
-                            rotate: [0, -2, 2, 0],
-                            transition: { duration: 0.3 }
-                        }}
+                        whileHover={{ scale: 1.01 }}
                     >
-                        Youtube Channel
+                        YouTube Channel
                     </motion.h2>
                 </motion.div>
 
                 {/* Description */}
                 <motion.p 
-                    className="text-sm md:text-xl mb-5 max-w-3xl leading-relaxed"
+                    className="text-base md:text-lg mb-6 max-w-2xl leading-relaxed text-muted-foreground"
                     variants={itemVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
                 >
                     I&apos;m kicking off my own YouTube channel — a chill space where I share live streams, VODs, and whatever I feel like recording.
                     Sometimes I game, sometimes I code, and sometimes I just vibe. Come hang out!
@@ -77,12 +72,12 @@ const YoutubeChannel = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                 >
                     <Link target='_blank' href={'https://www.youtube.com/@RamdlanFaqih'}>
-                        <Button className='bg-background text-text-primary border border-[#FF0000] cursor-pointer mb-10 hover-lift font-bold text-lg px-8 py-4'>
-                            🎥 My Channel
+                        <Button className='bg-foreground text-background hover:bg-foreground/90 mb-10 font-medium px-6 py-2.5'>
+                            My Channel
                         </Button>
                     </Link>
                 </motion.div>
@@ -115,12 +110,12 @@ const YoutubeChannel = () => {
                     transition={{ delay: 0.5 }}
                     viewport={{ once: true }}
                 >
-                                            <motion.div
-                            className="inline-block px-6 py-3 bg-secondary border border-black dark:border-white rounded-lg animate-pulse-slow"
-                        whileHover={{ scale: 1.05 }}
+                    <motion.p
+                        className="text-sm text-muted-foreground"
+                        whileHover={{ scale: 1.01 }}
                     >
-                        <span className="text-lg font-bold">🎮 Subscribe for more content!</span>
-                    </motion.div>
+                        Subscribe for more content
+                    </motion.p>
                 </motion.div>
             </div>
         </motion.section>

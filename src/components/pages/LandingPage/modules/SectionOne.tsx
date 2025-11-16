@@ -44,27 +44,26 @@ const SectionOne = () => {
 
   return (
     <motion.section 
-      className="min-h-screen flex flex-col items-center justify-center px-6 py-16 text-center"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-20 md:py-32 text-center"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       {/* Avatar */}
       <motion.div 
-        className="mb-10"
+        className="mb-8"
         variants={itemVariants}
       >
         <motion.div
           whileHover={{ 
-            scale: 1.05,
-            rotate: [0, -5, 5, 0],
-            transition: { duration: 0.3 }
+            scale: 1.02,
+            transition: { duration: 0.2 }
           }}
-          whileTap={{ scale: 0.95 }}
+          whileTap={{ scale: 0.98 }}
         >
-          <Avatar className="w-48 h-48 md:w-[300px] md:h-[300px] shadow-xl ring-2 ring-black dark:ring-white rounded-full neo-card animate-float">
+          <Avatar className="w-32 h-32 md:w-40 md:h-40 shadow-md border border-border rounded-full">
             <AvatarImage src="/images/profile.jpeg" alt="Ramdlan Faqih" />
-            <AvatarFallback className="text-2xl font-bold">RF</AvatarFallback>
+            <AvatarFallback className="text-xl font-semibold text-foreground">RF</AvatarFallback>
           </Avatar>
         </motion.div>
       </motion.div>
@@ -75,17 +74,14 @@ const SectionOne = () => {
         variants={itemVariants}
       >
         <motion.h1 
-          className="text-4xl md:text-6xl font-black text-slate-800 dark:text-primary leading-tight"
-          whileHover={{ 
-            scale: 1.02,
-            textShadow: "2px 2px 0px rgba(0,0,0,0.3)"
-          }}
+          className="text-3xl md:text-5xl font-semibold text-foreground leading-tight tracking-tight"
+          whileHover={{ scale: 1.01 }}
         >
           Ramdlan Faqih
         </motion.h1>
 
         <motion.div 
-          className='flex gap-4 items-center'
+          className='flex gap-3 items-center'
           variants={containerVariants}
         >
           {[
@@ -99,15 +95,14 @@ const SectionOne = () => {
               key={social.label}
               variants={socialVariants}
               whileHover={{ 
-                scale: 1.2,
-                y: -5,
+                scale: 1.1,
                 transition: { duration: 0.2 }
               }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Link href={social.href} target='_blank'>
-                                 <div className="p-3 bg-white dark:bg-gray-800 border border-black dark:border-white rounded-lg hover-lift">
-                  <social.icon className='w-6 h-6' />
+                <div className="p-2.5 bg-background border border-border rounded-md hover:border-foreground/30 transition-colors">
+                  <social.icon className='w-5 h-5 text-foreground' />
                 </div>
               </Link>
             </motion.div>
@@ -115,23 +110,22 @@ const SectionOne = () => {
         </motion.div>
 
         <motion.p 
-          className="text-sm md:text-xl text-text-primary max-w-3xl leading-relaxed"
+          className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed"
           variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
         >
           I am a frontend developer specializing in React and React Native, with experience in web and mobile application development. I graduated from Pijar Camp&apos;s Fullstack Web & Mobile Developer bootcamp by Telkom Indonesia. I have a broad interest in all things tech.
         </motion.p>
 
         <motion.div
           variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
         >
-                     <div className="mt-8 px-8 py-4 bg-secondary border border-black dark:border-white rounded-lg animate-pulse-slow">
-           <Link href={"mailto:ramfaqih@gmail.com"}>
-           <span className="text-lg font-semibold cursor-pointer">🚀 Contact Me</span>
-           </Link> 
-          </div>
+          <Link href={"mailto:ramfaqih@gmail.com"}>
+            <div className="mt-6 px-6 py-3 bg-foreground text-background rounded-md hover:bg-foreground/90 transition-colors inline-block">
+              <span className="text-base font-medium">Contact Me</span>
+            </div>
+          </Link>
         </motion.div>
       </motion.div>
     </motion.section>
